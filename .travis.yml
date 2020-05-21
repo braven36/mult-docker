@@ -4,7 +4,7 @@ services:
 before_install:
   - docker build -t braven36/react-test -f ./client/dockerfile.dev ./client
 script:
-  - docker run -e CI=true braven/react-test npm test
+  - docker run -e CI=true braven36/react-test npm test
 after_sucess:
   - docker build -t braven36/multi-client ./client
   - docker build -t braven36/multi-nginx ./nginx
